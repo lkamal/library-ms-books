@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.digizol.library.ms.books</groupId>
 	<artifactId>library-ms-books</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>library-ms-books</name>
 	<description>library ms books</description>
 	<properties>
@@ -20,6 +20,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<dependency>
