@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh './mvnw compile'
+                sh './mvnw clean compile'
             }
         }
     }
