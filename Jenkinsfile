@@ -20,5 +20,20 @@ pipeline {
                 sh 'docker tag library-ms-books:1.0.2 lkamal/library-ms-books:1.0.2'
             }
         }
+
+        stage('Docker push') {
+            steps {
+                withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerpwd')]) {
+                    sh 'echo ${dockerpwd} | docker login -u lkamal --password-stdin'
+                    sh 'docker push lkamal/library-ms-books:1.0.2'
+                }
+            }
+        }
+
+        stage('Deploy to EKS with Helm') {
+            steps {
+                sh 'sudo helm upgrade library-ms-books helm/library-ms-books/.'
+            }
+        }
     }
 }
