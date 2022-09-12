@@ -10,7 +10,7 @@ pipeline {
 
         stage('SonarQube analysis') {
             steps {
-                sh './mvnw sonar:sonar -Dsonar.host.url=http://3.230.2.128:9000 -Dsonar.login=c8face3be08e79ac4bf1227a7b02a8a62732561b'
+                sh 'mvn sonar:sonar -Dsonar.host.url=http://3.230.2.128:9000 -Dsonar.login=87e3d858a81dc7c4435a44a487db6374494d0a08'
             }
         }
     }
